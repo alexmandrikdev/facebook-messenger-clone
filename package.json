@@ -10,13 +10,16 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@tailwindcss/postcss7-compat": "^2.0.2",
+        "autoprefixer": "^9.8.6",
         "axios": "^0.21",
         "eslint": "^7.17.0",
         "eslint-config-prettier": "^7.1.0",
         "eslint-plugin-vue": "^7.4.1",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
+        "postcss": "8.1",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
         "vue-loader": "15.9.5",
         "vue-template-compiler": "^2.6.12"
     },
