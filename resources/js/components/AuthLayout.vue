@@ -36,13 +36,42 @@
 
         <auth-layout-mobile-menu
             v-if="isMenuOpen"
-            class="md:hidden"
+            class="md:hidden mt-24"
             :menu-items="menuItems"
         />
 
-        <div v-else class="container mx-auto" style="height:3000px">
-            Content
-        </div>
+        <!-- MAIN SECTION -->
+        <section
+            v-else
+            class="container mx-auto mt-48 md:mt-32 lg:mt-64 flex flex-col lg:flex-row px-8 xl:px-0"
+        >
+            <div class="lg:w-1/2">
+                <div
+                    class="max-w-0.763889xl mx-auto lg:mx-0 text-left md:text-center lg:text-left"
+                >
+                    <div
+                        id="hang-out"
+                        class="text-5.833 lg:text-7xl bg-clip-text text-transparent font-semibold tracking-tighter pb-3 leading-13 lg:leading-21.25"
+                    >
+                        Hang out <br class="lg:hidden" />
+                        anytime, anywhere
+                    </div>
+
+                    <div class="text-gray-600 text-lg mt-3">
+                        Messenger makes it easy and fun to stay close to your
+                        favorite people.
+                    </div>
+
+                    <slot></slot>
+                </div>
+            </div>
+            <div class="max-w-0.91667xl md:w-110 lg:w-1/2 mx-auto lg:mx-0">
+                <img
+                    class="transform lg:translate-x-8 lg:-translate-y-12"
+                    src="/images/auth-layout-image.png"
+                />
+            </div>
+        </section>
     </div>
 </template>
 
@@ -110,5 +139,13 @@ export default {
 <style scoped>
 header {
     background-color: rgba(255, 255, 255, 0.98);
+}
+#hang-out {
+    background-image: linear-gradient(
+        83.84deg,
+        #0088ff -6.87%,
+        #a033ff 26.54%,
+        #ff5c87 58.58%
+    );
 }
 </style>
