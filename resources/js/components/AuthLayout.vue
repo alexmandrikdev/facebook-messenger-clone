@@ -2,9 +2,9 @@
     <div>
         <header
             :class="{
-                'border-b border-black border-opacity-10 fixed': !isAtTopOfPage,
+                'border-b border-black border-opacity-10': !isAtTopOfPage,
             }"
-            class="h-24 w-full px-8 xl-px-0 top-0 transition-transform"
+            class="px-8 xl:px-0 h-24 w-full top-0 bg-clip-padding fixed z-50"
         >
             <div class="container mx-auto h-full flex items-center">
                 <router-link to="/">
@@ -107,4 +107,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+header {
+    background-color: rgba(255, 255, 255, 0.98);
+}
+</style>
