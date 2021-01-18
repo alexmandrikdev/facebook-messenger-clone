@@ -13,5 +13,22 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .vue()
-    .postCss('resources/css/app.css', 'public/css', [require('tailwindcss')])
-    .disableSuccessNotifications();
+    .postCss('resources/css/app.css', 'public/css', [
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ])
+    .disableSuccessNotifications()
+    .webpackConfig({
+        module: {
+            rules: [
+                {
+                    test: /\.(postcss)$/,
+                    use: [
+                        'vue-style-loader',
+                        { loader: 'css-loader', options: { importLoaders: 1 } },
+                        'postcss-loader',
+                    ],
+                },
+            ],
+        },
+    });
