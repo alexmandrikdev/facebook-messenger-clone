@@ -4,7 +4,7 @@
             :class="{
                 'border-b border-black border-opacity-10': !isAtTopOfPage,
             }"
-            class="px-8 xl:px-0 h-24 w-full top-0 bg-clip-padding fixed z-50"
+            class="px-8 xl:px-0 h-24 w-full top-0 bg-clip-padding fixed z-50 bg-white bg-opacity-98"
         >
             <div class="container mx-auto h-full flex items-center">
                 <router-link to="/">
@@ -137,9 +137,6 @@ export default {
 </script>
 
 <style scoped>
-header {
-    background-color: rgba(255, 255, 255, 0.98);
-}
 #hang-out {
     background-image: linear-gradient(
         83.84deg,

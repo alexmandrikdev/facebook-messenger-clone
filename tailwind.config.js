@@ -29,6 +29,9 @@ module.exports = {
                 '0.763889xl': '27.5rem',
                 '0.91667xl': '33rem',
             },
+            opacity: {
+                98: '0.98',
+            },
         },
     },
     variants: {
