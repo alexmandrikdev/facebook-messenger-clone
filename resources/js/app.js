@@ -7,6 +7,10 @@ import App from './App.vue';
 import VueApollo from 'vue-apollo';
 import ApolloClient from 'apollo-boost';
 
+import BaseHamburgerButton from './components/BaseHamburgerButton.vue';
+
+Vue.component('BaseHamburgerButton', BaseHamburgerButton);
+
 const apolloClient = new ApolloClient({
     uri: process.env.MIX_GRAPHQL_URL,
 });
