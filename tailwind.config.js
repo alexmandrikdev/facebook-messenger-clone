@@ -17,6 +17,7 @@ module.exports = {
             spacing: {
                 '55%': '55%',
                 1.2: '0.3rem',
+                7.5: '1.875rem',
                 110: '27.5rem',
                 132: '33rem',
             },
@@ -30,6 +31,7 @@ module.exports = {
             maxWidth: {
                 '0.763889xl': '27.5rem',
                 '0.91667xl': '33rem',
+                '1.041667xl': '9.375rem',
             },
             opacity: {
                 98: '0.98',

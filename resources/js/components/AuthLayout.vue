@@ -72,6 +72,29 @@
                 />
             </div>
         </section>
+
+        <footer
+            class="text-center text-sm mt-16 py-5 px-7.5 lg:flex lg:justify-center lg:items-center"
+        >
+            <strong class="lg:pr-6">© Facebook 2021.</strong>
+            <div class="flex justify-center mt-5 mb-2.5 lg:m-0 lg:px-6">
+                <router-link
+                    class="px-6"
+                    to="https://www.facebook.com/policy.php"
+                    >Data Policy</router-link
+                >
+                <router-link
+                    class="px-6"
+                    to="https://www.facebook.com/policies/?ref=pf"
+                    >Terms</router-link
+                >
+            </div>
+            <img
+                class="mx-auto lg:mx-0 max-w-1.041667xl h-full"
+                src="/images/from-facebook.jpg"
+                alt="From Facebook"
+            />
+        </footer>
     </div>
 </template>
 
