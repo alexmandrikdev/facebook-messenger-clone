@@ -9,12 +9,6 @@ export default {};
 <style>
 a.relative:hover::after {
     content: '';
-    @apply bg-blue-600;
-    height: 3px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    border-radius: 1.5px;
+    @apply bg-blue-600 absolute left-0 -bottom-1.5 w-full h-0.75 rounded-0.1875xl;
 }
 </style>

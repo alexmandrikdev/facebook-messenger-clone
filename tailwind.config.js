@@ -16,6 +16,7 @@ module.exports = {
         extend: {
             spacing: {
                 '55%': '55%',
+                0.75: '0.1875rem',
                 1.2: '0.3rem',
                 7.5: '1.875rem',
                 110: '27.5rem',
@@ -38,6 +39,7 @@ module.exports = {
             },
             borderRadius: {
                 '1.25xl': '0.625rem',
+                '0.1875xl': '0.09375rem',
             },
             zIndex: {
                 '-10': -10,
