@@ -78,15 +78,17 @@
         >
             <strong class="lg:pr-6">© Facebook 2021.</strong>
             <div class="flex justify-center mt-5 mb-2.5 lg:m-0 lg:px-6">
-                <router-link
+                <a
                     class="px-6"
-                    to="https://www.facebook.com/policy.php"
-                    >Data Policy</router-link
+                    target="__blank"
+                    href="https://www.facebook.com/policy.php"
+                    >Data Policy</a
                 >
-                <router-link
+                <a
                     class="px-6"
-                    to="https://www.facebook.com/policies/?ref=pf"
-                    >Terms</router-link
+                    target="__blank"
+                    href="https://www.facebook.com/policies/?ref=pf"
+                    >Terms</a
                 >
             </div>
             <img
