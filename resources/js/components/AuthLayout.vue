@@ -57,7 +57,7 @@
                         anytime, anywhere
                     </div>
 
-                    <div class="text-gray-600 text-lg mt-3">
+                    <div class="text-gray-600 text-lg mt-3 mb-20 lg:mb-10">
                         Messenger makes it easy and fun to stay close to your
                         favorite people.
                     </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="max-w-0.91667xl md:w-110 lg:w-1/2 mx-auto lg:mx-0">
                 <img
-                    class="transform lg:translate-x-8 lg:-translate-y-12"
+                    class="transform lg:translate-x-8 lg:translate-y-2"
                     src="/images/auth-layout-image.png"
                 />
             </div>
@@ -144,5 +144,15 @@ export default {
         #a033ff 26.54%,
         #ff5c87 58.58%
     );
+}
+form {
+    @apply lg:w-80;
+}
+form input[type='text'],
+form input[type='password'] {
+    @apply bg-gray-100 h-9 mb-3 py-2 px-4 text-lg w-full rounded-1.25xl;
+}
+form button[type='submit'] {
+    @apply bg-blue-500 font-bold rounded-3xl mt-5 mb-3 text-white px-5 py-2.5 hover:bg-blue-600 transition duration-200;
 }
 </style>

@@ -15,6 +15,8 @@ module.exports = {
         },
         extend: {
             spacing: {
+                '55%': '55%',
+                1.2: '0.3rem',
                 110: '27.5rem',
                 132: '33rem',
             },
@@ -31,6 +33,15 @@ module.exports = {
             },
             opacity: {
                 98: '0.98',
+            },
+            borderRadius: {
+                '1.25xl': '0.625rem',
+            },
+            zIndex: {
+                '-10': -10,
+            },
+            rotate: {
+                40: '40deg',
             },
         },
     },
