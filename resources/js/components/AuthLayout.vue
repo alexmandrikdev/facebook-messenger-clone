@@ -2,9 +2,9 @@
     <div>
         <header
             :class="{
-                'border-b border-black border-opacity-10': !isAtTopOfPage,
+                'border-b border-black border-opacity-10 fixed': !isAtTopOfPage,
             }"
-            class="px-8 xl:px-0 h-24 w-full top-0 bg-clip-padding fixed z-50 bg-white bg-opacity-98"
+            class="px-8 xl:px-0 h-24 w-full top-0 bg-clip-padding z-50 bg-white bg-opacity-98"
         >
             <div class="container mx-auto h-full flex items-center">
                 <router-link to="/">
@@ -43,7 +43,12 @@
         <!-- MAIN SECTION -->
         <section
             v-else
-            class="container mx-auto mt-48 md:mt-32 lg:mt-64 flex flex-col lg:flex-row px-8 xl:px-0"
+            class="container mx-auto flex flex-col lg:flex-row px-8 xl:px-0"
+            :class="[
+                !isAtTopOfPage
+                    ? 'mt-48 md:mt-32 lg:mt-64'
+                    : 'mt-24 md:mt-8 lg:mt-40',
+            ]"
         >
             <div class="lg:w-1/2">
                 <div
@@ -66,14 +71,12 @@
                 </div>
             </div>
             <div
-                class="max-w-0.91667xl lg:max-w-none md:w-110 lg:w-1/2 mx-auto lg:mx-0 "
+                class="max-w-0.91667xl lg:max-w-none md:w-110 lg:w-1/2 mx-auto lg:mx-0 lg:flex lg:items-center"
             >
-                <div class="lg:flex lg:items-center">
-                    <img
-                        class="transform lg:translate-x-8 lg:-translate-y-12"
-                        src="/images/auth-layout-image.png"
-                    />
-                </div>
+                <img
+                    class="transform lg:translate-x-8 lg:-translate-y-20"
+                    src="/images/auth-layout-image.png"
+                />
             </div>
         </section>
 
