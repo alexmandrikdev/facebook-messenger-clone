@@ -178,14 +178,25 @@ export default {
         #ff5c87 58.58%
     );
 }
+
 form {
     @apply lg:w-80;
 }
+
 form input[type='text'],
 form input[type='password'] {
     @apply bg-gray-100 h-9 mb-3 py-2 px-4 text-lg w-full rounded-1.25xl;
 }
+
 form button[type='submit'] {
     @apply bg-blue-500 font-bold rounded-3xl mt-5 mb-3 text-white px-5 py-2.5 hover:bg-blue-600 transition duration-200;
+}
+
+form input.invalid {
+    @apply border border-red-500;
+}
+
+form .invalid-feedback {
+    @apply text-red-500 text-sm mb-3 -mt-3;
 }
 </style>
