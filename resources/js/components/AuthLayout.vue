@@ -66,12 +66,14 @@
                 </div>
             </div>
             <div
-                class="max-w-0.91667xl lg:max-w-none md:w-110 lg:w-1/2 mx-auto lg:mx-0 lg:flex lg:items-center"
+                class="max-w-0.91667xl lg:max-w-none md:w-110 lg:w-1/2 mx-auto lg:mx-0 "
             >
-                <img
-                    class="transform lg:translate-x-8 lg:-translate-y-12"
-                    src="/images/auth-layout-image.png"
-                />
+                <div class="lg:flex lg:items-center">
+                    <img
+                        class="transform lg:translate-x-8 lg:-translate-y-12"
+                        src="/images/auth-layout-image.png"
+                    />
+                </div>
             </div>
         </section>
 
