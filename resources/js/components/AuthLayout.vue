@@ -40,70 +40,71 @@
             :menu-items="menuItems"
         />
 
-        <!-- MAIN SECTION -->
-        <section
-            v-else
-            class="container mx-auto flex flex-col lg:flex-row px-8 xl:px-0"
-            :class="[
-                !isAtTopOfPage
-                    ? 'mt-48 md:mt-32 lg:mt-64'
-                    : 'mt-24 md:mt-8 lg:mt-40',
-            ]"
-        >
-            <div class="lg:w-1/2">
-                <div
-                    class="max-w-0.763889xl mx-auto lg:mx-0 text-left md:text-center lg:text-left"
-                >
-                    <div
-                        id="hang-out"
-                        class="text-5.833 lg:text-7xl bg-clip-text text-transparent font-semibold tracking-tighter pb-3 leading-13 lg:leading-21.25"
-                    >
-                        Hang out <br class="lg:hidden" />
-                        anytime, anywhere
-                    </div>
-
-                    <div class="text-gray-600 text-lg mt-3 mb-20 lg:mb-10">
-                        Messenger makes it easy and fun to stay close to your
-                        favorite people.
-                    </div>
-
-                    <slot></slot>
-                </div>
-            </div>
-            <div
-                class="max-w-0.91667xl lg:max-w-none md:w-110 lg:w-1/2 mx-auto lg:mx-0 lg:flex lg:items-center"
+        <template v-else>
+            <!-- MAIN SECTION -->
+            <section
+                class="container mx-auto flex flex-col lg:flex-row px-8 xl:px-0"
+                :class="[
+                    !isAtTopOfPage
+                        ? 'mt-48 md:mt-32 lg:mt-64'
+                        : 'mt-24 md:mt-8 lg:mt-40',
+                ]"
             >
-                <img
-                    class="transform lg:translate-x-8 lg:-translate-y-20"
-                    src="/images/auth-layout-image.png"
-                />
-            </div>
-        </section>
+                <div class="lg:w-1/2">
+                    <div
+                        class="max-w-0.763889xl mx-auto lg:mx-0 text-left md:text-center lg:text-left"
+                    >
+                        <div
+                            id="hang-out"
+                            class="text-5.833 lg:text-7xl bg-clip-text text-transparent font-semibold tracking-tighter pb-3 leading-13 lg:leading-21.25"
+                        >
+                            Hang out <br class="lg:hidden" />
+                            anytime, anywhere
+                        </div>
 
-        <footer
-            class="text-center text-sm mt-16 py-5 px-7.5 lg:flex lg:justify-center lg:items-center"
-        >
-            <strong class="lg:pr-6">© Facebook 2021.</strong>
-            <div class="flex justify-center mt-5 mb-2.5 lg:m-0 lg:px-6">
-                <a
-                    class="px-6"
-                    target="__blank"
-                    href="https://www.facebook.com/policy.php"
-                    >Data Policy</a
+                        <div class="text-gray-600 text-lg mt-3 mb-20 lg:mb-10">
+                            Messenger makes it easy and fun to stay close to
+                            your favorite people.
+                        </div>
+
+                        <slot></slot>
+                    </div>
+                </div>
+                <div
+                    class="max-w-0.91667xl lg:max-w-none md:w-110 lg:w-1/2 mx-auto lg:mx-0 lg:flex lg:items-center"
                 >
-                <a
-                    class="px-6"
-                    target="__blank"
-                    href="https://www.facebook.com/policies/?ref=pf"
-                    >Terms</a
-                >
-            </div>
-            <img
-                class="mx-auto lg:mx-0 max-w-1.041667xl h-full"
-                src="/images/from-facebook.jpg"
-                alt="From Facebook"
-            />
-        </footer>
+                    <img
+                        class="transform lg:translate-x-8 lg:-translate-y-20"
+                        src="/images/auth-layout-image.png"
+                    />
+                </div>
+            </section>
+
+            <footer
+                class="text-center text-sm mt-16 py-5 px-7.5 lg:flex lg:justify-center lg:items-center"
+            >
+                <strong class="lg:pr-6">© Facebook 2021.</strong>
+                <div class="flex justify-center mt-5 mb-2.5 lg:m-0 lg:px-6">
+                    <a
+                        class="px-6"
+                        target="__blank"
+                        href="https://www.facebook.com/policy.php"
+                        >Data Policy</a
+                    >
+                    <a
+                        class="px-6"
+                        target="__blank"
+                        href="https://www.facebook.com/policies/?ref=pf"
+                        >Terms</a
+                    >
+                </div>
+                <img
+                    class="mx-auto lg:mx-0 max-w-1.041667xl h-full"
+                    src="/images/from-facebook.jpg"
+                    alt="From Facebook"
+                />
+            </footer>
+        </template>
     </div>
 </template>
 
