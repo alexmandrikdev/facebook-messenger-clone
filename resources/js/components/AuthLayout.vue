@@ -14,7 +14,7 @@
                         class="h-10"
                     />
                 </router-link>
-                <div class="ml-auto hidden md:flex font-semibold nav">
+                <div class="ml-auto hidden md:flex font-semibold">
                     <router-link
                         v-for="(menuItem, index) in menuItems.filter(
                             menuItem => menuItem.show,
