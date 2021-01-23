@@ -13,3 +13,4 @@ npm-debug.log
 yarn-error.log
 public/js/app.js
 public/css/app.css
+public/js/resources_js_views_Login_vue.js

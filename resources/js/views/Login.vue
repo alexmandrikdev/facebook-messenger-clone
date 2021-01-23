@@ -69,13 +69,15 @@
 
                         <form>
                             <input
-                                v-model="formData.email"
+                                v-model.trim.lazy="formData.email"
                                 type="text"
+                                name="email"
                                 placeholder="Email"
                             />
                             <input
-                                v-model="formData.password"
+                                v-model.trim.lazy="formData.password"
                                 type="password"
+                                name="password"
                                 placeholder="Password"
                             />
                             <div class="flex">
@@ -225,6 +227,11 @@ form {
 form input[type='text'],
 form input[type='password'] {
     @apply bg-gray-100 h-9 mb-3 py-2 px-4 text-lg w-full rounded-1.25xl;
+}
+
+form input[type='text']:focus,
+form input[type='password']:focus {
+    @apply border border-blue-500 outline-none;
 }
 
 form button[type='submit'] {
