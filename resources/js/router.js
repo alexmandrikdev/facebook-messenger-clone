@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+import store from './store';
+
 import Register from './views/Register.vue';
-import Login from './views/Login.vue';
 
 Vue.use(Router);
 
@@ -14,8 +15,15 @@ const router = new Router({
             component: Register,
         },
         {
-            path: '/login',
-            component: Login,
+            path: '/',
+            component: function() {
+                console.log(store.state);
+                if (store.state.isAuthenticated) {
+                    // return import('./views/Index.vue')
+                } else {
+                    return import('./views/Login.vue');
+                }
+            },
         },
     ],
 });
