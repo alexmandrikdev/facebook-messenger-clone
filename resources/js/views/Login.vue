@@ -6,9 +6,25 @@
                 <img src="/images/logo.svg" alt="logo" width="75" height="75" />
             </div>
 
-            <div class="text-4xl text-center mt-6 mb-11">
+            <div
+                v-if="incorrectFormValue === null"
+                class="text-4xl text-center mt-6 mb-11"
+            >
                 Connect with your favorite people.
             </div>
+
+            <template v-else>
+                <div class="text-4xl font-light">Messenger</div>
+                <div class="text-red-500 text-center mt-8 mb-11">
+                    <div>Incorrect email</div>
+                    <div>
+                        The email you’ve entered doesn’t match any account.
+                        <router-link to="/register" class="underline"
+                            >Sign up for an account.</router-link
+                        >
+                    </div>
+                </div>
+            </template>
 
             <form class="flex flex-col justify-center" @submit.prevent="login">
                 <input
