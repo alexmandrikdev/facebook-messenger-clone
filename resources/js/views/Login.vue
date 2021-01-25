@@ -60,7 +60,7 @@
             </form>
 
             <footer
-                class="flex flex-wrap justify-center text-gray-800 absolute bottom-16"
+                class="flex flex-wrap justify-center text-gray-800 absolute bottom-4"
             >
                 <router-link to="/register">Not on Messenger?</router-link>
                 <router-link to="/forgot-password"
