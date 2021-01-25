@@ -54,6 +54,14 @@ form input[type='submit']:focus {
         0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
+form input.invalid {
+    @apply border border-red-500;
+}
+
+form .invalid-feedback {
+    @apply text-red-500 text-sm mb-3 -mt-3;
+}
+
 footer > a {
     @apply mx-5 outline-none hover:underline;
 }
