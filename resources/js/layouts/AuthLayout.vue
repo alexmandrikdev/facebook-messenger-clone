@@ -55,6 +55,6 @@ form input[type='submit']:focus {
 }
 
 footer > a {
-    @apply mx-5;
+    @apply mx-5 outline-none hover:underline;
 }
 </style>
