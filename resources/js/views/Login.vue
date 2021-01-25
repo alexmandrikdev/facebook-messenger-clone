@@ -26,7 +26,7 @@
                     />
                 </div>
 
-                <div class="flex mt-10 mb-5">
+                <div class="flex mt-10">
                     <div class="relative ml-auto">
                         <input
                             v-model="formData.keepMeSignedIn"
