@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <form>
+    <auth-layout>
+        <form class="flex flex-col justify-center" @submit.prevent="register">
             <input
                 v-model.trim.lazy="$v.formData.email.$model"
                 :class="{ invalid: $v.formData.email.$error }"
@@ -120,16 +120,23 @@
                 The last name is required
             </div>
 
-            <button type="submit">Register</button>
+            <div class="text-center mt-3">
+                <input
+                    type="submit"
+                    value="Register"
+                    class="bg-primary rounded-6.25xl text-white py-2.375 px-5 cursor-pointer outline-none"
+                />
+            </div>
         </form>
-    </div>
+    </auth-layout>
 </template>
 
 <script>
 import { required, minLength, sameAs, email } from 'vuelidate/lib/validators';
+import AuthLayout from '../layouts/AuthLayout.vue';
 
 export default {
-    components: {},
+    components: { AuthLayout },
     data() {
         return {
             formData: {
@@ -141,6 +148,9 @@ export default {
             },
             passwordMinLength: 6,
         };
+    },
+    methods: {
+        register() {},
     },
     validations() {
         return {
