@@ -34,7 +34,7 @@
             </div>
         </header>
 
-        <auth-layout-mobile-menu
+        <index-view-mobile-menu
             v-if="isMenuOpen"
             class="md:hidden mt-24"
             :menu-items="menuItems"
@@ -160,14 +160,14 @@
 </template>
 
 <script>
-import AuthLayoutMobileMenu from '../components/AuthLayoutMobileMenu.vue';
+import IndexViewMobileMenu from '../components/IndexViewMobileMenu.vue';
 import BaseHamburgerButton from '../components/BaseHamburgerButton.vue';
 import loginMixin from '../mixins/loginMixin';
 
 export default {
     components: {
         BaseHamburgerButton,
-        AuthLayoutMobileMenu,
+        IndexViewMobileMenu,
     },
     mixins: [loginMixin],
     data() {
