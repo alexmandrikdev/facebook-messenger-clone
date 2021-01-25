@@ -150,7 +150,21 @@ export default {
         };
     },
     methods: {
-        register() {},
+        register() {
+            axios
+                .post('/register', {
+                    email: this.formData.email,
+                    password: this.formData.password,
+                    password_confirmation: this.formData.passwordConfirmation,
+                    first_name: this.formData.firstName,
+                    last_name: this.formData.lastName,
+                })
+                .then(response => {
+                    this.$store.commit('setIsAuthenticated', true);
+
+                    this.$router.push('/');
+                });
+        },
     },
     validations() {
         return {
