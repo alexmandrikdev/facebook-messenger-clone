@@ -126,7 +126,7 @@
                 >
                     <img
                         class="transform lg:translate-x-8 lg:-translate-y-12"
-                        src="/images/auth-layout-image.png"
+                        src="/images/index-image.png"
                     />
                 </div>
             </section>
