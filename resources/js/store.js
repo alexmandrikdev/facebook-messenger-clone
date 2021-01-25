@@ -5,6 +5,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        isAuthenticated: false,
+        isAuthenticated: localStorage.getItem('isAuthenticated') === 'true',
     },
 });
