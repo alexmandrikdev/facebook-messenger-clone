@@ -81,11 +81,13 @@
 
 <script>
 import PageNotAvailable from '../components/PageNotAvailable.vue';
+import loginMixin from '../mixins/loginMixin';
 
 export default {
     components: {
         PageNotAvailable,
     },
+    mixins: [loginMixin],
     props: {
         incorrectFormValue: {
             type: String,
@@ -95,15 +97,6 @@ export default {
             type: String,
             default: null,
         },
-    },
-    data() {
-        return {
-            formData: {
-                email: '',
-                password: '',
-                keepMeSignedIn: false,
-            },
-        };
     },
     computed: {
         pageIsAvailable() {
@@ -116,35 +109,12 @@ export default {
             return this.password === null;
         },
     },
-    created() {
+    mounted() {
         if (!this.pageIsAvailable) {
             document.title = 'Messenger | Page Not Found';
+        } else {
+            document.title = 'Messenger';
         }
-    },
-    methods: {
-        login() {
-            axios
-                .post('/login', this.formData)
-                .then(response => {
-                    this.$store.commit('setIsAuthenticated', true);
-
-                    this.$router.push('/');
-                })
-                .catch(error => {
-                    if (
-                        error.response.data.errors.email[0] ===
-                        'These credentials do not match our records.'
-                    ) {
-                        this.$router.push({
-                            name: 'login',
-                            params: {
-                                password: 'password',
-                                incorrectFormValue: 'email',
-                            },
-                        });
-                    }
-                });
-        },
     },
 };
 </script>
