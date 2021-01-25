@@ -9,6 +9,7 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         screens: {
+            sm: '640px',
             md: '768px',
             lg: '1024px',
             xl: '1255px',
@@ -18,8 +19,10 @@ module.exports = {
                 '55%': '55%',
                 0.75: '0.1875rem',
                 1.2: '0.3rem',
+                3.625: '0.90625rem',
                 7.5: '1.875rem',
                 13: '3.25rem',
+                37.5: '9.375rem',
                 110: '27.5rem',
                 132: '33rem',
             },
@@ -39,14 +42,18 @@ module.exports = {
                 98: '0.98',
             },
             borderRadius: {
-                '1.25xl': '0.625rem',
                 '0.1875xl': '0.09375rem',
+                '1.25xl': '0.625rem',
+                '6.25xl': '3.125rem',
             },
             zIndex: {
                 '-10': -10,
             },
             rotate: {
                 40: '40deg',
+            },
+            colors: {
+                primary: '#0A7CFF',
             },
         },
     },
