@@ -1,31 +1,8 @@
 <template>
     <div>
         <page-not-available v-if="!pageIsAvailable" />
-        <div v-else class="h-screen flex flex-col justify-center items-center">
-            <div class="h-30 flex justify-center items-center">
-                <img src="/images/logo.svg" alt="logo" width="75" height="75" />
-            </div>
 
-            <div
-                v-if="incorrectFormValue === null"
-                class="text-4xl text-center mt-6 mb-11"
-            >
-                Connect with your favorite people.
-            </div>
-
-            <template v-else>
-                <div class="text-4xl font-light">Messenger</div>
-                <div class="text-red-500 text-center mt-8 mb-11">
-                    <div>Incorrect email</div>
-                    <div>
-                        The email you’ve entered doesn’t match any account.
-                        <router-link to="/register" class="underline"
-                            >Sign up for an account.</router-link
-                        >
-                    </div>
-                </div>
-            </template>
-
+        <auth-layout v-else>
             <form class="flex flex-col justify-center" @submit.prevent="login">
                 <input
                     v-model.trim.lazy="formData.email"
@@ -74,34 +51,19 @@
                     >
                 </div>
             </form>
-
-            <footer
-                class="flex flex-wrap justify-center text-gray-800 absolute bottom-4"
-            >
-                <router-link to="/register">Not on Messenger?</router-link>
-                <router-link to="/forgot-password"
-                    >Forgot Password?</router-link
-                >
-                <a href="https://www.facebook.com/about/privacy/"
-                    >Data Policy</a
-                >
-                <a href="https://www.facebook.com/legal/terms/">Terms</a>
-                <a href="https://www.facebook.com/policies/cookies/"
-                    >Cookies Policy</a
-                >
-                <div>© Facebook 2021</div>
-            </footer>
-        </div>
+        </auth-layout>
     </div>
 </template>
 
 <script>
 import PageNotAvailable from '../components/PageNotAvailable.vue';
+import AuthLayout from '../layouts/AuthLayout.vue';
 import loginMixin from '../mixins/loginMixin';
 
 export default {
     components: {
         PageNotAvailable,
+        AuthLayout,
     },
     mixins: [loginMixin],
     props: {
@@ -135,23 +97,4 @@ export default {
 };
 </script>
 
-<style scoped>
-input[type='text'],
-input[type='password'] {
-    @apply px-4 text-lg border border-black border-opacity-20 rounded h-10.5 w-80 mb-3;
-}
-
-form input[type='text']:focus,
-form input[type='password']:focus {
-    @apply border border-primary outline-none;
-}
-
-form input[type='submit']:focus {
-    box-shadow: 0 0 1px 2px rgba(88, 144, 255, 0.75),
-        0 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-footer > a {
-    @apply mx-5;
-}
-</style>
+<style scoped></style>
