@@ -162,11 +162,14 @@
 <script>
 import AuthLayoutMobileMenu from '../components/AuthLayoutMobileMenu.vue';
 import BaseHamburgerButton from '../components/BaseHamburgerButton.vue';
+import loginMixin from '../mixins/loginMixin';
+
 export default {
     components: {
         BaseHamburgerButton,
         AuthLayoutMobileMenu,
     },
+    mixins: [loginMixin],
     data() {
         return {
             topOfPage: 35,
@@ -194,11 +197,6 @@ export default {
                     label: 'For Developers',
                 },
             ],
-            formData: {
-                email: '',
-                password: '',
-                keepMeSignedIn: false,
-            },
         };
     },
     beforeMount() {
@@ -210,29 +208,6 @@ export default {
         },
         onMenuButtonClicked() {
             this.isMenuOpen = !this.isMenuOpen;
-        },
-        login() {
-            axios
-                .post('/login', this.formData)
-                .then(response => {
-                    this.$store.commit('setIsAuthenticated', true);
-
-                    this.$router.push('/');
-                })
-                .catch(error => {
-                    if (
-                        error.response.data.errors.email[0] ===
-                        'These credentials do not match our records.'
-                    ) {
-                        this.$router.push({
-                            name: 'login',
-                            params: {
-                                password: 'password',
-                                incorrectFormValue: 'email',
-                            },
-                        });
-                    }
-                });
         },
     },
 };
