@@ -1,5 +1,5 @@
 <template>
-    <div class="w-22 md:w-90">
+    <div class="w-full md:w-90">
         <div class="flex mx-4 mt-5 mb-3 h-9">
             <img
                 src="/images/profile-picture-placeholder.png"

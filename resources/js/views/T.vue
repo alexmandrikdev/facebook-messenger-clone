@@ -1,7 +1,9 @@
 <template>
     <div class="flex flex-row h-screen">
         <conversation-selector-menu />
-        <div class="flex flex-1 flex-row border-l border-black-opacity-10">
+        <div
+            class="flex-1 flex-row border-l border-black-opacity-10 hidden md:flex"
+        >
             <chat :toggle-info-menu="toggleInfoMenu" />
 
             <info-menu :info-menu-toggler="infoMenuToggler" />
