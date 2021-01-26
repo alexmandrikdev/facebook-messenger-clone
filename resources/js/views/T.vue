@@ -1,6 +1,14 @@
 <template>
     <div class="flex flex-row h-screen">
-        <div class="w-22 md:w-90"></div>
+        <div class="w-22 md:w-90">
+            <div class="flex mx-4 mt-5 mb-3 h-9">
+                <img
+                    src="/images/profile-picture-placeholder.png"
+                    alt="profile picture"
+                    class="w-9 rounded-full object-contain object-center"
+                />
+            </div>
+        </div>
         <div class="flex flex-1 flex-row border-l border-black-opacity-10">
             <div class="flex-1 overflow-hidden">
                 <div
