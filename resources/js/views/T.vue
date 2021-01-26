@@ -5,7 +5,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        logout() {
+            this.$store.dispatch('logout');
+        },
+    },
+};
 </script>
 
 <style scoped></style>
