@@ -26,13 +26,18 @@ export default {
                         [
                             'The selected email is invalid.',
                             'The email field is required.',
+                            'These credentials do not match our records.',
                         ].indexOf(error.response.data.errors.email[0]) !== -1
                     ) {
                         this.$router.push({
                             name: 'login',
                             params: {
                                 password: 'password',
-                                incorrectFormValue: 'email',
+                                incorrectFormValue:
+                                    error.response.data.errors.email[0] ===
+                                    'These credentials do not match our records.'
+                                        ? 'password'
+                                        : 'email',
                             },
                         });
                     }

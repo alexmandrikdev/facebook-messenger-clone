@@ -18,13 +18,24 @@
         <template v-else>
             <div class="text-4xl font-light">Messenger</div>
             <div class="text-red-500 text-center mt-8 mb-11">
-                <div>Incorrect email</div>
-                <div>
-                    The email you’ve entered doesn’t match any account.
-                    <router-link to="/register" class="underline"
-                        >Sign up for an account.</router-link
-                    >
-                </div>
+                <template v-if="incorrectFormValue === 'email'">
+                    <div>Incorrect email</div>
+                    <div>
+                        The email you’ve entered doesn’t match any account.
+                        <router-link to="/register" class="underline"
+                            >Sign up for an account.</router-link
+                        >
+                    </div>
+                </template>
+                <template v-else>
+                    <div>Please re-enter your password</div>
+                    <div>
+                        The password you’ve entered is incorrect.
+                        <router-link to="/forgot-password" class="underline"
+                            >Forgot Password?</router-link
+                        >
+                    </div>
+                </template>
             </div>
         </template>
 
