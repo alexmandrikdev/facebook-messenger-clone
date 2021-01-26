@@ -7,6 +7,8 @@
                     alt="profile picture"
                     class="w-9 rounded-full object-contain object-center"
                 />
+
+                <div class="text-2xl font-bold ml-3">Chats</div>
             </div>
         </div>
         <div class="flex flex-1 flex-row border-l border-black-opacity-10">
