@@ -19,7 +19,7 @@ export default {
                 .then(response => {
                     this.$store.commit('setIsAuthenticated', true);
 
-                    this.$router.push('/');
+                    this.$router.push('/t');
                 })
                 .catch(error => {
                     if (
