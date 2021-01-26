@@ -39,6 +39,9 @@ const router = new Router({
             name: 'login',
             component: Login,
             props: true,
+            meta: {
+                onlyForUnauthenticated: true,
+            },
         },
     ],
 });
