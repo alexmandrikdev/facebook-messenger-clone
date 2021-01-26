@@ -67,7 +67,7 @@ export default {
     },
     mixins: [loginMixin],
     props: {
-        incorrectFormValue: {
+        incorrectFormValueProp: {
             type: String,
             default: null,
         },
@@ -75,6 +75,11 @@ export default {
             type: String,
             default: null,
         },
+    },
+    data() {
+        return {
+            incorrectFormValue: this.incorrectFormValueProp,
+        };
     },
     computed: {
         pageIsAvailable() {

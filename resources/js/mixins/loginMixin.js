@@ -29,17 +29,27 @@ export default {
                             'These credentials do not match our records.',
                         ].indexOf(error.response.data.errors.email[0]) !== -1
                     ) {
-                        this.$router.push({
-                            name: 'login',
-                            params: {
-                                password: 'password',
-                                incorrectFormValue:
-                                    error.response.data.errors.email[0] ===
-                                    'These credentials do not match our records.'
-                                        ? 'password'
-                                        : 'email',
-                            },
-                        });
+                        if (this.$route.name !== 'login') {
+                            this.$router.push({
+                                name: 'login',
+                                params: {
+                                    password: 'password',
+                                    incorrectFormValueProp:
+                                        error.response.data.errors.email[0] ===
+                                        'These credentials do not match our records.'
+                                            ? 'password'
+                                            : 'email',
+                                },
+                            });
+                        } else {
+                            this.formData.password = '';
+
+                            this.incorrectFormValue =
+                                error.response.data.errors.email[0] ===
+                                'These credentials do not match our records.'
+                                    ? 'password'
+                                    : 'email';
+                        }
                     }
                 });
         },
