@@ -5,7 +5,7 @@
         <auth-layout v-else>
             <form class="flex flex-col justify-center" @submit.prevent="login">
                 <input
-                    v-model.trim.lazy="formData.email"
+                    v-model.trim="formData.email"
                     type="text"
                     name="email"
                     placeholder="Email"
