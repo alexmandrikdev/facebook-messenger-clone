@@ -14,4 +14,13 @@ export default new Vuex.Store({
             state.isAuthenticated = value;
         },
     },
+    actions: {
+        logout({ commit }) {
+            axios.post('/logout').then(() => {
+                commit('setIsAuthenticated', false);
+            });
+
+            router.push('/login');
+        },
+    },
 });
