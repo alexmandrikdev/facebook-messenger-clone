@@ -11,7 +11,11 @@ export default {
     methods: {
         login() {
             axios
-                .post('/login', this.formData)
+                .post('/login', {
+                    email: this.formData.email,
+                    password: this.formData.password,
+                    remember: this.formData.keepMeSignedIn,
+                })
                 .then(response => {
                     this.$store.commit('setIsAuthenticated', true);
 
@@ -20,7 +24,7 @@ export default {
                 .catch(error => {
                     if (
                         [
-                            'These credentials do not match our records.',
+                            'The selected email is invalid.',
                             'The email field is required.',
                         ].indexOf(error.response.data.errors.email[0]) !== -1
                     ) {
