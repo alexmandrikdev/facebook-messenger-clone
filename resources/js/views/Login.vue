@@ -2,7 +2,7 @@
     <div>
         <page-not-available v-if="!pageIsAvailable" />
 
-        <auth-layout v-else>
+        <auth-layout v-else :incorrect-form-value="incorrectFormValue">
             <form class="flex flex-col justify-center" @submit.prevent="login">
                 <input
                     v-model.trim="formData.email"
