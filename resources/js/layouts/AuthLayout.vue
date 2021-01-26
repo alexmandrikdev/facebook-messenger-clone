@@ -93,7 +93,7 @@ form input.invalid {
 }
 
 form .invalid-feedback {
-    @apply text-red-500 text-sm mb-3 -mt-3;
+    @apply text-red-500 text-sm mb-3 -mt-3 w-80;
 }
 
 footer > a {
