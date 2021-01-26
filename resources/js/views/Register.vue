@@ -75,6 +75,7 @@
             <div
                 v-if="
                     $v.formData.passwordConfirmation.$dirty &&
+                        $v.formData.passwordConfirmation.required &&
                         !$v.formData.passwordConfirmation.sameAsPassword
                 "
                 class="invalid-feedback"
