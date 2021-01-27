@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import router from './router.js';
+import router from '../router.js';
 
 Vue.use(Vuex);
 
