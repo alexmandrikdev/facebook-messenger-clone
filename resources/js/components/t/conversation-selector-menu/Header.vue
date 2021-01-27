@@ -9,13 +9,26 @@
         <div class="text-2xl font-bold ml-3">Chats</div>
 
         <div
-            class="ml-auto w-9 bg-gray-100 rounded-full flex cursor-pointer hover:bg-gray-200"
+            v-click-outside="dropDownClickedOutside"
+            class="relative ml-auto w-9"
         >
-            <svg viewBox="0 0 36 36" class="m-auto" height="28" width="28">
-                <path
-                    d="M12.5 18A2.25 2.25 0 118 18a2.25 2.25 0 014.5 0zm7.75 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm5.5 2.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
-                ></path>
-            </svg>
+            <div
+                class="w-full h-full bg-gray-100 rounded-full flex cursor-pointer hover:bg-gray-200"
+                @click="isDropDownOpen = !isDropDownOpen"
+            >
+                <svg
+                    viewBox="0 0 36 36"
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    height="28"
+                    width="28"
+                >
+                    <path
+                        d="M12.5 18A2.25 2.25 0 118 18a2.25 2.25 0 014.5 0zm7.75 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm5.5 2.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
+                    ></path>
+                </svg>
+            </div>
+
+            <header-drop-down v-if="isDropDownOpen" />
         </div>
 
         <div
@@ -34,7 +47,21 @@
 </template>
 
 <script>
-export default {};
+import HeaderDropDown from './HeaderDropDown.vue';
+
+export default {
+    components: { HeaderDropDown },
+    data() {
+        return {
+            isDropDownOpen: false,
+        };
+    },
+    methods: {
+        dropDownClickedOutside() {
+            this.isDropDownOpen = false;
+        },
+    },
+};
 </script>
 
 <style scoped></style>
