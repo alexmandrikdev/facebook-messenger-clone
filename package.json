@@ -17,7 +17,7 @@
         "eslint-config-prettier": "^7.1.0",
         "eslint-plugin-vue": "^7.4.1",
         "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.20",
         "postcss": "8.1",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
         "vue-loader": "15.9.5",
