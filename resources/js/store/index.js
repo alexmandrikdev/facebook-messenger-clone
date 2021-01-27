@@ -24,9 +24,9 @@ export default new Vuex.Store({
         logout({ commit }) {
             axios.post('/logout').then(() => {
                 commit('setIsAuthenticated', false);
-            });
 
-            router.push('/login');
+                router.push('/login');
+            });
         },
     },
 });
