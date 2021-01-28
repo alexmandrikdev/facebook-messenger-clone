@@ -11,8 +11,7 @@ type Query {
 
 type User {
     id: ID!
-    name: String!
+    first_name: String!
+    last_name: String!
     email: String!
-    created_at: DateTime!
-    updated_at: DateTime!
 }
