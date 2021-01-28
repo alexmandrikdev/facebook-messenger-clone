@@ -49,19 +49,17 @@
             </div>
         </div>
 
-        <div id="search-result-container" class="flex">
-            <base-loading-spinner v-if="isSearchResultEmpty" class="m-auto" />
-        </div>
+        <search-result :search-result="searchResult" />
     </div>
 </template>
 
 <script>
 import _debounce from 'lodash/debounce';
 import gql from 'graphql-tag';
-import BaseLoadingSpinner from '../../BaseLoadingSpinner.vue';
+import SearchResult from './search/SearchResult.vue';
 
 export default {
-    components: { BaseLoadingSpinner },
+    components: { SearchResult },
     data() {
         return {
             searchResult: {
@@ -78,12 +76,6 @@ export default {
             set(value) {
                 this.$store.commit('updateSearchInputValue', value);
             },
-        },
-        isSearchResultEmpty() {
-            return (
-                this.searchResult.friends.length === 0 &&
-                this.searchResult.morePeople.length === 0
-            );
         },
     },
     methods: {
@@ -114,8 +106,4 @@ export default {
 };
 </script>
 
-<style scoped>
-#search-result-container {
-    height: calc(100vh - 169px);
-}
-</style>
+<style scoped></style>
