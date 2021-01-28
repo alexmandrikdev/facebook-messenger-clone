@@ -49,12 +49,24 @@
         </div>
 
         <div id="search-result-container" class="flex">
+            <base-loading-spinner v-if="isSearchResultEmpty" class="m-auto" />
         </div>
     </div>
 </template>
 
 <script>
+import BaseLoadingSpinner from '../../BaseLoadingSpinner.vue';
+
 export default {
+    components: { BaseLoadingSpinner },
+    data() {
+        return {
+            searchResult: {
+                friends: [],
+                morePeople: [],
+            },
+        };
+    },
     computed: {
         searchInputValue: {
             get() {
@@ -63,6 +75,12 @@ export default {
             set(value) {
                 this.$store.commit('updateSearchInputValue', value);
             },
+        },
+        isSearchResultEmpty() {
+            return (
+                this.searchResult.friends.length === 0 &&
+                this.searchResult.morePeople.length === 0
+            );
         },
     },
     methods: {
