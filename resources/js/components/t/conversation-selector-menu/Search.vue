@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col">
-        <div class="mb-2 mt-3 px-4 flex">
+    <div v-click-outside="clickedOutsideFromSearchInput" class="flex flex-col">
+        <div class="mb-1 mt-3 px-4 flex">
             <div
                 v-if="searchInputValue !== null"
                 class="h-9 w-9 hover:bg-gray-100 rounded-full mr-1 -ml-2 flex cursor-pointer"
@@ -38,7 +38,6 @@
 
                 <input
                     v-model="searchInputValue"
-                    v-click-outside="clickedOutsideFromSearchInput"
                     type="text"
                     placeholder="Search Messenger"
                     class="bg-gray-100 rounded-6.25xl pt-1.75 pb-2.25 pr-3 w-full h-9 text-3.75 placeholder-gray-600 outline-none"
