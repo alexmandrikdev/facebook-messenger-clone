@@ -48,7 +48,12 @@
             </div>
         </div>
 
-        <search-result :search-result="searchResult" />
+        <div>
+            <search-result
+                v-if="searchInputValue !== null"
+                :search-result="searchResult"
+            />
+        </div>
     </div>
 </template>
 
