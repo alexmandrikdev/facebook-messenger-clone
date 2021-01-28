@@ -12,7 +12,8 @@ class Users
      */
     public function __invoke($_, array $args)
     {
-        return User::whereRaw("CONCAT(first_name, ' ', last_name) LIKE '%{$args['searchKey']}%'")
+        return User::where('first_name', 'like', "{$args['searchKey']}%")
+            ->orWhere('last_name', 'like', "{$args['searchKey']}%")
             ->get();
 
 
