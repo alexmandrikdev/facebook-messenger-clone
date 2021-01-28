@@ -37,13 +37,14 @@
                 </svg>
 
                 <input
-                    v-model.trim="searchInputValue"
+                    v-model="searchInputValue"
                     v-click-outside="clickedOutsideFromSearchInput"
                     type="text"
                     placeholder="Search Messenger"
                     class="bg-gray-100 rounded-6.25xl pt-1.75 pb-2.25 pr-3 w-full h-9 text-3.75 placeholder-gray-600 outline-none"
                     :class="[searchInputValue === null ? 'pl-8' : 'pl-3']"
                     @click="searchInputValue = ''"
+                    @keyup="search"
                 />
             </div>
         </div>
@@ -55,6 +56,8 @@
 </template>
 
 <script>
+import _debounce from 'lodash/debounce';
+import gql from 'graphql-tag';
 import BaseLoadingSpinner from '../../BaseLoadingSpinner.vue';
 
 export default {
@@ -87,6 +90,26 @@ export default {
         clickedOutsideFromSearchInput() {
             this.$store.commit('updateSearchInputValue', null);
         },
+        search: _debounce(function() {
+            this.$apollo
+                .query({
+                    query: gql`
+                        query SearchUsers($searchKey: String!) {
+                            users(searchKey: $searchKey) {
+                                id
+                                first_name
+                                last_name
+                            }
+                        }
+                    `,
+                    variables: {
+                        searchKey: this.searchInputValue,
+                    },
+                })
+                .then(response => {
+                    this.searchResult.morePeople = response.data.users;
+                });
+        }, 1000),
     },
 };
 </script>
