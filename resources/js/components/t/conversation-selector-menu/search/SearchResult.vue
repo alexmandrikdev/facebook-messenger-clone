@@ -1,5 +1,8 @@
 <template>
-    <div id="search-result-container" class="flex">
+    <div
+        id="search-result-container"
+        class="flex absolute top-0 left-0 w-full bg-white"
+    >
         <base-loading-spinner v-if="isSearchResultEmpty" class="m-auto" />
     </div>
 </template>

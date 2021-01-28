@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="relative">
             <search-result
                 v-if="searchInputValue !== null"
                 :search-result="searchResult"
