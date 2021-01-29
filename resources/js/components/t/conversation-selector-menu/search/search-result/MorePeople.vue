@@ -1,6 +1,6 @@
 <template>
     <ul class="px-2 w-full">
-        <div class="p-2 pb-0.5 text-3.75 font-bold text-gray-500">
+        <div class="px-2 pb-0.5 text-3.75 font-bold text-gray-500">
             More People
         </div>
         <li v-for="people in morePeople" :key="people.id">
