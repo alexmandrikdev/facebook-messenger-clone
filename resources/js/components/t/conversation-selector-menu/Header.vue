@@ -3,7 +3,8 @@
         <img
             src="/images/profile-picture-placeholder.png"
             alt="profile picture"
-            class="w-9 rounded-full object-contain object-center"
+            class="w-9 rounded-full object-contain object-center cursor-pointer md:cursor-auto"
+            @click="isMobileOptionsMenuOpen = !isMobileOptionsMenuOpen"
         />
 
         <div class="text-2xl font-bold ml-3">Chats</div>
@@ -43,17 +44,24 @@
                 ></path>
             </svg>
         </div>
+
+        <mobile-options-menu
+            :is-open="isMobileOptionsMenuOpen"
+            @close="isMobileOptionsMenuOpen = false"
+        />
     </div>
 </template>
 
 <script>
+import MobileOptionsMenu from './header/MobileOptionsMenu.vue';
 import HeaderDropDown from './HeaderDropDown.vue';
 
 export default {
-    components: { HeaderDropDown },
+    components: { HeaderDropDown, MobileOptionsMenu },
     data() {
         return {
             isDropDownOpen: false,
+            isMobileOptionsMenuOpen: false,
         };
     },
     methods: {
