@@ -18,6 +18,12 @@ import InfoMenu from '../components/t/InfoMenu.vue';
 
 export default {
     components: { Chat, InfoMenu, ConversationSelectorMenu },
+    props: {
+        id: {
+            type: Number,
+            default: null,
+        },
+    },
     data() {
         return {
             infoMenuToggler: true,
