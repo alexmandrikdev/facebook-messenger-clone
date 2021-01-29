@@ -87,7 +87,7 @@ export default {
             this.$store.commit('updateSearchInputValue', null);
         },
         search: _debounce(function() {
-            if (this.searchInputValue !== null) {
+            if (this.searchInputValue !== '') {
                 this.$apollo
                     .query({
                         query: gql`
