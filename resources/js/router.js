@@ -28,7 +28,8 @@ const router = new Router({
             },
         },
         {
-            path: '/t/:conversationId?',
+            path: '/t/:id?',
+            name: 't',
             component: T,
             meta: {
                 requiresAuth: true,
