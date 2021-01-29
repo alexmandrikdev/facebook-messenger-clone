@@ -1,17 +1,23 @@
 <template>
     <div
         id="search-result-container"
-        class="flex absolute top-0 left-0 w-full bg-white"
+        class="flex absolute top-0 left-0 w-full bg-white overflow-y-scroll"
     >
         <base-loading-spinner v-if="isSearchResultEmpty" class="m-auto" />
+
+        <more-people
+            v-else-if="searchResult.morePeople.length !== 0"
+            :more-people="searchResult.morePeople"
+        />
     </div>
 </template>
 
 <script>
 import BaseLoadingSpinner from '../../../BaseLoadingSpinner.vue';
+import MorePeople from './search-result/MorePeople.vue';
 
 export default {
-    components: { BaseLoadingSpinner },
+    components: { BaseLoadingSpinner, MorePeople },
     props: {
         searchResult: {
             type: Object,
