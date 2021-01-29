@@ -17,9 +17,7 @@ export default {
                     remember: this.formData.keepMeSignedIn,
                 })
                 .then(response => {
-                    this.$store.commit('setIsAuthenticated', true);
-
-                    this.$router.push('/t');
+                    this.$store.dispatch('login', response);
                 })
                 .catch(error => {
                     if (

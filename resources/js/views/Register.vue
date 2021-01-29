@@ -135,6 +135,7 @@
 <script>
 import { required, minLength, sameAs, email } from 'vuelidate/lib/validators';
 import AuthLayout from '../layouts/AuthLayout.vue';
+import gql from 'graphql-tag';
 
 export default {
     components: { AuthLayout },
@@ -161,9 +162,24 @@ export default {
                     last_name: this.formData.lastName,
                 })
                 .then(response => {
-                    this.$store.commit('setIsAuthenticated', true);
-
-                    this.$router.push('/');
+                    this.$apollo
+                        .query({
+                            query: gql`
+                                query {
+                                    authUser {
+                                        id
+                                        first_name
+                                        last_name
+                                    }
+                                }
+                            `,
+                        })
+                        .then(response => {
+                            this.$store.dispatch(
+                                'login',
+                                response.data.authUser,
+                            );
+                        });
                 });
         },
     },
