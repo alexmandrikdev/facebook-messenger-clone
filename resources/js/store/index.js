@@ -12,7 +12,7 @@ export default new Vuex.Store({
     },
     state: {
         isAuthenticated: localStorage.getItem('isAuthenticated') === 'true',
-        authUser: localStorage.getItem('authUser'),
+        authUser: JSON.parse(localStorage.getItem('authUser')),
     },
     mutations: {
         setIsAuthenticated(state, value) {
@@ -21,7 +21,7 @@ export default new Vuex.Store({
             state.isAuthenticated = value;
         },
         setAuthUser(state, value) {
-            localStorage.setItem('authUser', value);
+            localStorage.setItem('authUser', JSON.stringify(value));
 
             state.authUser = value;
         },
@@ -29,7 +29,7 @@ export default new Vuex.Store({
     actions: {
         login({ commit }, authUser) {
             commit('setIsAuthenticated', true);
-            commit('setAuthUser', authUser);
+            commit('setAuthUser', authUser.data);
 
             router.push('/t');
         },
