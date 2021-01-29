@@ -5,19 +5,7 @@
                 v-if="searchInputValue !== null"
                 class="h-9 w-9 hover:bg-gray-100 rounded-full mr-1 -ml-2 flex cursor-pointer"
             >
-                <svg
-                    class="w-5 h-5 m-auto"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    @click="closeSearch"
-                >
-                    <path
-                        fill-rule="evenodd"
-                        d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-                        clip-rule="evenodd"
-                    />
-                </svg>
+                <base-right-arrow class="w-5 h-5 m-auto" @click="closeSearch" />
             </div>
 
             <div class="relative flex-1">
@@ -62,9 +50,10 @@
 import _debounce from 'lodash/debounce';
 import gql from 'graphql-tag';
 import SearchResult from './search/SearchResult.vue';
+import BaseRightArrow from '../../BaseRightArrow.vue';
 
 export default {
-    components: { SearchResult },
+    components: { SearchResult, BaseRightArrow },
     data() {
         return {
             searchResult: {
