@@ -13,7 +13,7 @@
             class="relative ml-auto w-9"
         >
             <div
-                class="w-full h-full bg-gray-100 rounded-full flex cursor-pointer hover:bg-gray-200"
+                class="w-full h-full bg-gray-100 rounded-full hidden md:flex cursor-pointer hover:bg-gray-200"
                 @click="isDropDownOpen = !isDropDownOpen"
             >
                 <svg

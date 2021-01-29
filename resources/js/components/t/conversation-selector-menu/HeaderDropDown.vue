@@ -1,5 +1,7 @@
 <template>
-    <div class="top-full left-0 pb-2 h-full box-content absolute mt-3.75 z-50">
+    <div
+        class="top-full left-0 pb-2 h-full box-content absolute mt-3.75 z-50 hidden md:block"
+    >
         <div class="w-85 bg-white shadow rounded-lg z-20 relative py-2">
             <div
                 class="mx-2 p-2 flex rounded hover:bg-gray-100 cursor-pointer"
