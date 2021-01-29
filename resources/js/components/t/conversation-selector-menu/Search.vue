@@ -42,7 +42,7 @@
                     placeholder="Search Messenger"
                     class="bg-gray-100 rounded-6.25xl pt-1.75 pb-2.25 pr-3 w-full h-9 text-3.75 placeholder-gray-600 outline-none"
                     :class="[searchInputValue === null ? 'pl-8' : 'pl-3']"
-                    @click="searchInputValue = ''"
+                    @click="searchInputClicked"
                     @keyup="search"
                 />
             </div>
@@ -85,6 +85,11 @@ export default {
     methods: {
         clickedOutsideFromSearchInput() {
             this.$store.commit('updateSearchInputValue', null);
+        },
+        searchInputClicked() {
+            if (this.searchInputValue === null) {
+                this.searchInputValue = '';
+            }
         },
         search: _debounce(function() {
             if (this.searchInputValue !== '') {
