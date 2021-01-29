@@ -34,6 +34,7 @@ const router = new Router({
             meta: {
                 requiresAuth: true,
             },
+            props: true,
         },
         {
             path: '/login/:password?',
