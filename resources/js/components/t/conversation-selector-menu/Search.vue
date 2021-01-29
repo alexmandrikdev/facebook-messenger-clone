@@ -1,5 +1,5 @@
 <template>
-    <div v-click-outside="clickedOutsideFromSearchInput" class="flex flex-col">
+    <div v-click-outside="closeSearch" class="flex flex-col">
         <div class="mb-1 mt-3 px-4 flex">
             <div
                 v-if="searchInputValue !== null"
@@ -10,6 +10,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
+                    @click="closeSearch"
                 >
                     <path
                         fill-rule="evenodd"
@@ -83,7 +84,7 @@ export default {
         },
     },
     methods: {
-        clickedOutsideFromSearchInput() {
+        closeSearch() {
             this.$store.commit('updateSearchInputValue', null);
         },
         searchInputClicked() {
