@@ -87,24 +87,26 @@ export default {
             this.$store.commit('updateSearchInputValue', null);
         },
         search: _debounce(function() {
-            this.$apollo
-                .query({
-                    query: gql`
-                        query SearchUsers($searchKey: String!) {
-                            users(searchKey: $searchKey) {
-                                id
-                                first_name
-                                last_name
+            if (this.searchInputValue !== null) {
+                this.$apollo
+                    .query({
+                        query: gql`
+                            query SearchUsers($searchKey: String!) {
+                                users(searchKey: $searchKey) {
+                                    id
+                                    first_name
+                                    last_name
+                                }
                             }
-                        }
-                    `,
-                    variables: {
-                        searchKey: this.searchInputValue,
-                    },
-                })
-                .then(response => {
-                    this.searchResult.morePeople = response.data.users;
-                });
+                        `,
+                        variables: {
+                            searchKey: this.searchInputValue,
+                        },
+                    })
+                    .then(response => {
+                        this.searchResult.morePeople = response.data.users;
+                    });
+            }
         }, 1000),
     },
 };
