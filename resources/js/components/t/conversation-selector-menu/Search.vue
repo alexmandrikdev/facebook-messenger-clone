@@ -74,7 +74,9 @@ export default {
     },
     methods: {
         closeSearch() {
-            this.$store.commit('updateSearchInputValue', null);
+            if (this.searchInputValue !== null) {
+                this.searchInputValue = null;
+            }
         },
         searchInputClicked() {
             if (this.searchInputValue === null) {
