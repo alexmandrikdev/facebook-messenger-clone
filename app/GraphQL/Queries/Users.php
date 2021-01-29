@@ -14,6 +14,7 @@ class Users
     {
         return User::where('first_name', 'like', "{$args['searchKey']}%")
             ->orWhere('last_name', 'like', "{$args['searchKey']}%")
+            ->limit($args['limit'])
             ->get();
 
 

@@ -5,7 +5,7 @@ scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 extend type Query @guard {
-    users(searchKey: String!): [User!]!
+    users(searchKey: String!, limit: Int = 30): [User!]!
 }
 
 type User {
