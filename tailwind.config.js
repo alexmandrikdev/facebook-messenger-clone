@@ -73,6 +73,9 @@ module.exports = {
             colors: {
                 primary: '#0A7CFF',
             },
+            transitionProperty: {
+                width: 'width',
+            },
         },
     },
     variants: {
