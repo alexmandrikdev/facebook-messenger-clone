@@ -19,10 +19,6 @@ import gql from 'graphql-tag';
 
 export default {
     components: { Chat, InfoMenu, ConversationSelectorMenu },
-    beforeRouteUpdate(to, from, next) {
-        this.fetchUser();
-        next();
-    },
     props: {
         id: {
             type: Number,
@@ -34,6 +30,14 @@ export default {
             infoMenuToggler: true,
             user: null,
         };
+    },
+    watch: {
+        $route(to, from) {
+            if (to.params.id !== from.params.id) {
+                this.fetchUser();
+                next();
+            }
+        },
     },
     mounted() {
         this.fetchUser();
