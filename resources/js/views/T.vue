@@ -15,9 +15,14 @@
 import Chat from '../components/t/Chat.vue';
 import ConversationSelectorMenu from '../components/t/ConversationSelectorMenu.vue';
 import InfoMenu from '../components/t/InfoMenu.vue';
+import gql from 'graphql-tag';
 
 export default {
     components: { Chat, InfoMenu, ConversationSelectorMenu },
+    beforeRouteUpdate(to, from, next) {
+        this.fetchUser();
+        next();
+    },
     props: {
         id: {
             type: Number,
@@ -27,11 +32,34 @@ export default {
     data() {
         return {
             infoMenuToggler: true,
+            user: null,
         };
+    },
+    mounted() {
+        this.fetchUser();
     },
     methods: {
         toggleInfoMenu() {
             this.infoMenuToggler = !this.infoMenuToggler;
+        },
+        fetchUser() {
+            this.$apollo
+                .query({
+                    query: gql`
+                        query fetchUser($id: ID!) {
+                            user(id: $id) {
+                                first_name
+                                last_name
+                            }
+                        }
+                    `,
+                    variables: {
+                        id: this.id,
+                    },
+                })
+                .then(response => {
+                    this.user = response.data.user;
+                });
         },
     },
 };
