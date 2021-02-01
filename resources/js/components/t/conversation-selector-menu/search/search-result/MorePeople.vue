@@ -10,7 +10,7 @@
             >
                 <img
                     src="/images/profile-picture-placeholder.png"
-                    class="w-9 h-9 object-contain object-center rounded-full mr-3"
+                    class="w-9 h-9 object-cover object-center rounded-full mr-3"
                     :alt="people.first_name + ' ' + people.last_name"
                 />
                 <div class="text-3.75 truncate flex-1">

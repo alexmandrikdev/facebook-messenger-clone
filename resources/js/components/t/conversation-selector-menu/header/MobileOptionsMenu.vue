@@ -12,7 +12,7 @@
             <img
                 src="/images/profile-picture-placeholder.png"
                 alt="profile picture"
-                class="w-20 h-20 rounded-full object-contain object-center"
+                class="w-20 h-20 rounded-full object-cover object-center"
             />
 
             <div class="mt-3 font-bold text-lg">

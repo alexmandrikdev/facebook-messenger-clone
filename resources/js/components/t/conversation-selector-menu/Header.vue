@@ -3,7 +3,7 @@
         <img
             src="/images/profile-picture-placeholder.png"
             alt="profile picture"
-            class="w-9 rounded-full object-contain object-center cursor-pointer md:cursor-auto"
+            class="w-9 rounded-full object-cover object-center cursor-pointer md:cursor-auto"
             @click="isMobileOptionsMenuOpen = !isMobileOptionsMenuOpen"
         />
 
