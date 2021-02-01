@@ -3,7 +3,27 @@
         class="h-16 flex flex-row items-center justify-between p-2.5"
         style="box-shadow: 0 0 4px rgba(0,0,0,.18);"
     >
-        <div class="">Name</div>
+        <div class="flex items-center">
+            <img
+                src="/images/profile-picture-placeholder.png"
+                :alt="[
+                    user
+                        ? `${user.first_name} ${user.last_name}`
+                        : `${$store.state.authUser.first_name} ${$store.state.authUser.last_name}`,
+                ]"
+                class="w-10 h-10 ml-1.5 rounded-full object-cover object-center"
+            />
+
+            <div class="text-4.25 font-semibold ml-2.75 -mt-1.5">
+                <template v-if="user">
+                    {{ user.first_name }} {{ user.last_name }}
+                </template>
+                <template v-else>
+                    Facebook User
+                </template>
+            </div>
+        </div>
+
         <div class="flex">
             <div class="w-7 h-7 m-2.5 cursor-pointer" @click="toggleInfoMenu">
                 <div class="w-7 h-7 rounded-full bg-blue-100">
@@ -33,6 +53,10 @@ export default {
         toggleInfoMenu: {
             type: Function,
             required: true,
+        },
+        user: {
+            type: Object,
+            default: null,
         },
     },
 };

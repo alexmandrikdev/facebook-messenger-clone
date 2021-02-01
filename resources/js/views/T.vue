@@ -4,7 +4,7 @@
         <div
             class="flex-1 flex-row border-l border-black-opacity-10 hidden md:flex"
         >
-            <chat :toggle-info-menu="toggleInfoMenu" />
+            <chat :toggle-info-menu="toggleInfoMenu" :user="user" />
 
             <info-menu :info-menu-toggler="infoMenuToggler" />
         </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="flex-1 overflow-hidden">
-        <chat-header :toggle-info-menu="toggleInfoMenu" />
+        <chat-header :toggle-info-menu="toggleInfoMenu" :user="user" />
     </div>
 </template>
 
@@ -12,6 +12,10 @@ export default {
         toggleInfoMenu: {
             type: Function,
             required: true,
+        },
+        user: {
+            type: Object,
+            default: null,
         },
     },
 };
