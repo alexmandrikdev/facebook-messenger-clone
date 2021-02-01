@@ -44,8 +44,8 @@ module.exports = {
                 21.25: '5.3125rem',
             },
             fontSize: {
-                5.833: '3.5rem',
-                3.75: '0.9375rem',
+                '3.75xl': '0.9375rem',
+                '5.833xl': '3.5rem',
             },
             maxWidth: {
                 '0.763889xl': '27.5rem',

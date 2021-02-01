@@ -56,7 +56,7 @@
                     >
                         <div
                             id="hang-out"
-                            class="text-5.833 lg:text-7xl bg-clip-text text-transparent font-semibold tracking-tighter pb-3 leading-13 lg:leading-21.25"
+                            class="text-5.833xl lg:text-7xl bg-clip-text text-transparent font-semibold tracking-tighter pb-3 leading-13 lg:leading-21.25"
                         >
                             Hang out <br class="lg:hidden" />
                             anytime, anywhere

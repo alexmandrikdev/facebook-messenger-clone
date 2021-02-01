@@ -1,6 +1,6 @@
 <template>
     <ul class="px-2 w-full">
-        <div class="px-2 pb-0.5 text-3.75 font-bold text-gray-500">
+        <div class="px-2 pb-0.5 text-3.75xl font-bold text-gray-500">
             More People
         </div>
         <li v-for="people in morePeople" :key="people.id">
@@ -13,7 +13,7 @@
                     class="w-9 h-9 object-contain object-center rounded-full mr-3"
                     :alt="people.first_name + ' ' + people.last_name"
                 />
-                <div class="text-3.75 truncate flex-1">
+                <div class="text-3.75xl truncate flex-1">
                     {{ people.first_name }} {{ people.last_name }}
                 </div>
             </router-link>
