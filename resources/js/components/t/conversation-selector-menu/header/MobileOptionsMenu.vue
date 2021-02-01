@@ -19,15 +19,20 @@
                 {{ $store.state.authUser.first_name }}
                 {{ $store.state.authUser.last_name }}
             </div>
+
+            <div class="w-full mt-3">
+                <options />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import Header from './mobile-options-menu/Header.vue';
+import Options from './Options.vue';
 
 export default {
-    components: { Header },
+    components: { Header, Options },
     props: {
         isOpen: {
             type: Boolean,
