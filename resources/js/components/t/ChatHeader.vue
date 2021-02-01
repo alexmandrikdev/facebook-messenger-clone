@@ -14,7 +14,7 @@
                 class="w-10 h-10 ml-1.5 rounded-full object-cover object-center"
             />
 
-            <div class="text-4.25 font-semibold ml-2.75 -mt-1.5">
+            <div class="text-4.25 font-semibold ml-2.75 -mt-1.5 truncate">
                 <template v-if="user">
                     {{ user.first_name }} {{ user.last_name }}
                 </template>
