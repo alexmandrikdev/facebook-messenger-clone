@@ -3,7 +3,7 @@
         <chat-header :toggle-info-menu="toggleInfoMenu" :user="user" />
 
         <div class="overflow-y-auto flex-1">
-            <user-info class="mt-5" />
+            <user-info />
         </div>
     </div>
 </template>
