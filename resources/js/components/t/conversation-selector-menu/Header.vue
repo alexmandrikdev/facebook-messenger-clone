@@ -7,7 +7,7 @@
             @click="isMobileOptionsMenuOpen = !isMobileOptionsMenuOpen"
         />
 
-        <div class="text-2xl font-bold ml-3">Chats</div>
+        <div class="text-2xl font-bold ml-3 mt-0.25">Chats</div>
 
         <div
             v-click-outside="dropDownClickedOutside"
