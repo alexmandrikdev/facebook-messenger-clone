@@ -3,34 +3,17 @@
         <chat-header :toggle-info-menu="toggleInfoMenu" :user="user" />
 
         <div class="overflow-y-auto flex-1">
-            <div class="mt-5">
-                <img
-                    src="/images/profile-picture-placeholder.png"
-                    :alt="[
-                        user
-                            ? `${user.first_name} ${user.last_name}`
-                            : `${$store.state.authUser.first_name} ${$store.state.authUser.last_name}`,
-                    ]"
-                    class="w-15 h-15 mx-auto rounded-full object-cover object-center"
-                />
-
-                <div class="text-4.25 font-semibold text-center mt-1">
-                    <template v-if="user">
-                        {{ user.first_name }} {{ user.last_name }}
-                    </template>
-                    <template v-else>
-                        Facebook User
-                    </template>
-                </div>
-            </div>
+            <user-info class="mt-5" />
         </div>
     </div>
 </template>
 
 <script>
+import UserInfo from './chat/UserInfo.vue';
 import ChatHeader from './ChatHeader.vue';
+
 export default {
-    components: { ChatHeader },
+    components: { ChatHeader, UserInfo },
     props: {
         toggleInfoMenu: {
             type: Function,
