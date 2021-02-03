@@ -32,12 +32,9 @@ export default {
         };
     },
     watch: {
-        $route(to, from) {
-            if (to.params.id !== from.params.id) {
-                this.fetchUser();
-                this.$store.commit('updateSearchInputValue', null);
-                next();
-            }
+        id: function() {
+            this.fetchUser();
+            this.$store.commit('updateSearchInputValue', null);
         },
     },
     mounted() {
