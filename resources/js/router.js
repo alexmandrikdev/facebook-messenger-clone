@@ -34,7 +34,9 @@ const router = new Router({
             meta: {
                 requiresAuth: true,
             },
-            props: route => ({ id: parseInt(route.params.id) }),
+            props: route => ({
+                id: route.params.id ? parseInt(route.params.id) : null,
+            }),
         },
         {
             path: '/login/:password?',
