@@ -3,9 +3,7 @@
         <img
             src="/images/profile-picture-placeholder.png"
             :alt="[
-                user
-                    ? `${user.first_name} ${user.last_name}`
-                    : `${$store.state.authUser.first_name} ${$store.state.authUser.last_name}`,
+                user ? `${user.first_name} ${user.last_name}` : 'Facebook User',
             ]"
             class="w-15 h-15 mx-auto rounded-full object-cover object-center"
         />
