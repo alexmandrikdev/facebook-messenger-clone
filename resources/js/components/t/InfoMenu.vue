@@ -33,6 +33,10 @@ export default {
             type: Boolean,
             required: true,
         },
+        user: {
+            type: Object,
+            default: null,
+        },
     },
 };
 </script>
