@@ -6,7 +6,7 @@
         >
             <chat :toggle-info-menu="toggleInfoMenu" :user="user" />
 
-            <info-menu :info-menu-toggler="infoMenuToggler" />
+            <info-menu :info-menu-toggler="infoMenuToggler" :user="user" />
         </div>
     </div>
 </template>
