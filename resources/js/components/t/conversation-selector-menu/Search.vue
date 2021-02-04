@@ -5,7 +5,7 @@
                 v-if="searchInputValue !== null"
                 class="h-9 w-9 hover:bg-gray-100 rounded-full mr-1 -ml-2 flex cursor-pointer"
             >
-                <base-right-arrow class="w-5 h-5 m-auto" @click="closeSearch" />
+                <base-left-arrow class="w-5 h-5 m-auto" @click="closeSearch" />
             </div>
 
             <div class="relative flex-1">
@@ -50,10 +50,10 @@
 import _debounce from 'lodash/debounce';
 import gql from 'graphql-tag';
 import SearchResult from './search/SearchResult.vue';
-import BaseRightArrow from '../../BaseRightArrow.vue';
+import BaseLeftArrow from '../../BaseLeftArrow.vue';
 
 export default {
-    components: { SearchResult, BaseRightArrow },
+    components: { SearchResult, BaseLeftArrow },
     data() {
         return {
             searchResult: {
