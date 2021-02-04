@@ -48,23 +48,25 @@ export default {
             this.infoMenuToggler = !this.infoMenuToggler;
         },
         fetchUser() {
-            this.$apollo
-                .query({
-                    query: gql`
-                        query fetchUser($id: ID!) {
-                            user(id: $id) {
-                                first_name
-                                last_name
+            if (this.id) {
+                this.$apollo
+                    .query({
+                        query: gql`
+                            query fetchUser($id: ID!) {
+                                user(id: $id) {
+                                    first_name
+                                    last_name
+                                }
                             }
-                        }
-                    `,
-                    variables: {
-                        id: this.id,
-                    },
-                })
-                .then(response => {
-                    this.user = response.data.user;
-                });
+                        `,
+                        variables: {
+                            id: this.id,
+                        },
+                    })
+                    .then(response => {
+                        this.user = response.data.user;
+                    });
+            }
         },
     },
 };
