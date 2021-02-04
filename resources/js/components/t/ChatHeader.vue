@@ -17,7 +17,7 @@
                         ? `${user.first_name} ${user.last_name}`
                         : `${$store.state.authUser.first_name} ${$store.state.authUser.last_name}`,
                 ]"
-                class="w-10 h-10 ml-1.5 rounded-full object-cover object-center"
+                class="w-8 h-8 md:w-10 md:h-10 ml-1.5 rounded-full object-cover object-center"
             />
 
             <div class="text-4.25 font-semibold ml-2.75 -mt-1.5 truncate">
