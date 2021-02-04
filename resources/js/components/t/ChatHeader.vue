@@ -32,7 +32,7 @@
 
         <div class="flex">
             <div class="w-7 h-7 m-2.5 cursor-pointer" @click="toggleInfoMenu">
-                <div class="w-7 h-7 rounded-full bg-blue-100">
+                <div class="w-7 h-7 rounded-full md:bg-blue-100">
                     <svg
                         class=""
                         role="presentation"
