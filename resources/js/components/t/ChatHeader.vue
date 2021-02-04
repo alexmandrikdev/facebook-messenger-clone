@@ -5,6 +5,7 @@
     >
         <div class="flex items-center">
             <base-left-arrow
+                id="chat-close-button"
                 class="w-5 h-5 md:hidden"
                 @click="$emit('close')"
             />

@@ -55,8 +55,6 @@ export default {
     watch: {
         id: function() {
             this.fetchUser();
-
-            this.$store.commit('updateSearchInputValue', null);
         },
     },
     mounted() {
