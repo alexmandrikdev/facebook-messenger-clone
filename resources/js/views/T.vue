@@ -55,9 +55,8 @@ export default {
     watch: {
         id: function() {
             this.fetchUser();
-            this.$store.commit('updateSearchInputValue', null);
 
-            this.displayedSectionOnMobile = this.calcDisplayedSectionOnMobile();
+            this.$store.commit('updateSearchInputValue', null);
         },
     },
     mounted() {
@@ -85,7 +84,11 @@ export default {
                     })
                     .then(response => {
                         this.user = response.data.user;
+
+                        this.displayedSectionOnMobile = this.calcDisplayedSectionOnMobile();
                     });
+            } else {
+                this.displayedSectionOnMobile = this.calcDisplayedSectionOnMobile();
             }
         },
         calcDisplayedSectionOnMobile() {
