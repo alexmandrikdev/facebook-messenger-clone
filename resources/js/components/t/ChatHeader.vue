@@ -4,6 +4,11 @@
         style="box-shadow: 0 0 4px rgba(0,0,0,.18);"
     >
         <div class="flex items-center">
+            <base-left-arrow
+                class="w-5 h-5 md:hidden"
+                @click="$emit('close')"
+            />
+
             <img
                 src="/images/profile-picture-placeholder.png"
                 :alt="[
@@ -48,7 +53,9 @@
 </template>
 
 <script>
+import BaseLeftArrow from '../BaseLeftArrow.vue';
 export default {
+    components: { BaseLeftArrow },
     props: {
         toggleInfoMenu: {
             type: Function,
