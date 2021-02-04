@@ -6,7 +6,10 @@
         >
             <chat :toggle-info-menu="toggleInfoMenu" :user="user" />
 
-            <info-menu :info-menu-toggler="infoMenuToggler" :user="user" />
+            <info-menu
+                :user="user"
+                :class="[infoMenuToggler ? 'md:flex' : 'md:hidden']"
+            />
         </div>
     </div>
 </template>
