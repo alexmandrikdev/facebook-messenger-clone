@@ -1,6 +1,10 @@
 <template>
     <div class="flex flex-col flex-1 overflow-hidden">
-        <chat-header :toggle-info-menu="toggleInfoMenu" :user="user" />
+        <chat-header
+            :toggle-info-menu="toggleInfoMenu"
+            :user="user"
+            @close="$emit('close')"
+        />
 
         <div class="overflow-y-auto flex-1">
             <user-info :user="user" />
