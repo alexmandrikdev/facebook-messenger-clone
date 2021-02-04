@@ -84,7 +84,10 @@ export default {
             }
         },
         search: _debounce(function() {
-            if (this.searchInputValue !== '') {
+            if (
+                this.searchInputValue !== '' &&
+                this.searchInputValue !== null
+            ) {
                 this.$apollo
                     .query({
                         query: gql`
