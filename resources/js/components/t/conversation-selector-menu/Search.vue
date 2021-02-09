@@ -76,10 +76,11 @@ export default {
         closeSearch(event) {
             if (this.searchInputValue !== null) {
                 if (
-                    event.target.id !== 'chat-close-button' &&
-                    event.target.parentNode.id !== 'chat-close-button' &&
-                    event.target.parentNode.parentNode.id !==
-                        'chat-close-button'
+                    !event ||
+                    (event.target.id !== 'chat-close-button' &&
+                        event.target.parentNode.id !== 'chat-close-button' &&
+                        event.target.parentNode.parentNode.id !==
+                            'chat-close-button')
                 ) {
                     this.searchInputValue = null;
                 }
