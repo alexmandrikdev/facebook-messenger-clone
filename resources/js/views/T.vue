@@ -49,7 +49,7 @@ export default {
         return {
             infoMenuToggler: true,
             user: null,
-            displayedSectionOnMobile: this.calcDisplayedSectionOnMobile(),
+            displayedSectionOnMobile: 'conversation-selector-menu',
         };
     },
     watch: {
@@ -58,13 +58,13 @@ export default {
         },
     },
     mounted() {
-        this.fetchUser();
+        this.fetchUser(true);
     },
     methods: {
         toggleInfoMenu() {
             this.infoMenuToggler = !this.infoMenuToggler;
         },
-        fetchUser() {
+        fetchUser(isMounted = false) {
             if (this.id) {
                 this.$apollo
                     .query({
@@ -83,14 +83,13 @@ export default {
                     .then(response => {
                         this.user = response.data.user;
 
-                        this.displayedSectionOnMobile = this.calcDisplayedSectionOnMobile();
+                        if (!isMounted) {
+                            this.displayedSectionOnMobile = 'chat';
+                        }
                     });
             } else {
-                this.displayedSectionOnMobile = this.calcDisplayedSectionOnMobile();
+                this.displayedSectionOnMobile = 'conversation-selector-menu';
             }
-        },
-        calcDisplayedSectionOnMobile() {
-            return this.id === null ? 'conversation-selector-menu' : 'chat';
         },
     },
 };
